@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Bar Chart</title>
+	<script src="../../../dist/Chart.min.js"></script>
+	<script src="../../utils.js"></script>
+	<style>
+	canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+	}
+	</style>
+</head>
+
+<body>
+	<div id="container" style="width: 75%;">
+		<canvas id="canvas"></canvas>
+	</div>
+	
+	<script>
+		
+			var ctxNew = document.getElementById('canvas').getContext('2d');
+			var myBarNew = new Chart(ctxNew, {
+				type: 'bar',
+				data: {
+			labels: ['si','no'],
+			datasets: [{
+				label: 'Dataset 1',
+				data: [5,1],
+				backgroundColor: window.chartColors.red,
+				borderColor: window.chartColors.red,
+				borderWidth: 1	
+				}]
+			},
+				options : {
+			    scales: {
+			        yAxes: [{
+			            ticks: {
+			                beginAtZero: true
+			            }
+			        }],
+			        xAxes: [{
+			            ticks: {
+			                beginAtZero: true
+			            		}
+			        		}]
+			    	},title: {
+								display: true,
+								text: 'Grafica del avance de los alumnos: Esperado-Cubierto'
+							}
+				}
+			});
+		
+	
+	</script>
+</body>
+
+</html>
